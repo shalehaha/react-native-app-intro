@@ -1,5 +1,6 @@
 import assign from 'assign-deep';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   StatusBar,
   StyleSheet,
@@ -18,6 +19,8 @@ import RenderDots from './components/Dots';
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
+const pagerBottom = (windowsHeight -  windowsWidth) /2
+
 
 const defaulStyles = {
   header: {
@@ -56,21 +59,16 @@ const defaulStyles = {
     fontWeight: 'bold',
   },
   dotStyle: {
-    backgroundColor: 'rgba(255,255,255,.3)',
-    width: 13,
-    height: 13,
-    borderRadius: 7,
-    marginLeft: 7,
-    marginRight: 7,
-    marginTop: 7,
-    marginBottom: 7,
+    backgroundColor: '#A37E2C',
+    width: (windowsWidth - 38) /3,
+    height: 3,
   },
   activeDotStyle: {
-    backgroundColor: '#fff',
+    backgroundColor: '#A37E2C',
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 25,
+    bottom: pagerBottom,
     left: 0,
     right: 0,
     flexDirection: 'row',

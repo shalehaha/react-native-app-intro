@@ -11,7 +11,7 @@ export const Dot = ({
     return (
       <View
         style={[styles.dotStyle, styles.activeDotStyle, { 
-          backgroundColor: activeDotColor 
+          backgroundColor: '#947433'
         }]}
       />
     );
@@ -19,7 +19,7 @@ export const Dot = ({
     return (
       <View 
         style={[styles.dotStyle, { 
-          backgroundColor: dotColor
+          backgroundColor: '#CCCCCC'
         }]} />
     );
   }
@@ -31,7 +31,7 @@ export const RenderDots = (index, total, props) => {
     dots.push(React.createElement(Dot, { 
       ...props,
       key: i,
-      active: i === index
+      active: i <= index
     }));
   }
   return dots;
